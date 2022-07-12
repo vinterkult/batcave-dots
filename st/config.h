@@ -5,8 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-
-static char *font = "Hack Nerd Font:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Hack:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 8;
 
 /*
@@ -94,48 +93,38 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* bg opacity */
-float alpha = 0.8;
+
+/* gruvbox-dark colorscheme */
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	[0] = "#1e1e1e", /* black   */
-	[1] = "#cf6a4c", /* red     */
- 	[2] = "#8f9d6a", /* green   */
-  	[3] = "#f9ee98", /* yellow  */
-  	[4] = "#7587a6", /* blue    */
- 	[5] = "#9b859d", /* magenta */
-  	[6] = "#afc4db", /* cyan    */
-  	[7] = "#a7a7a7", /* white   */
-
-  	/* 8 bright colors */
-  	[8]  = "#5f5a60", /* black   */
-   	[9]  = "#cf6a4c", /* red     */
-  	[10] = "#8f9d6a", /* green   */
-  	[11] = "#f9ee98", /* yellow  */
-  	[12] = "#7587a6", /* blue    */
-  	[13] = "#9b859d", /* magenta */
-  	[14] = "#afc4db", /* cyan    */
-  	[15] = "#ffffff", /* white   */
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#1e1e1e",
-	"#a7a7a7",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
 };
 
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 257;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 15;
+
 static unsigned int defaultrcs = 257;
 
 /*
@@ -145,7 +134,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
@@ -205,8 +194,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ControlMask,          XK_Up,     kscrollup,      {.i = -1} },
-	{ ControlMask,          XK_Down,   kscrolldown,    {.i = -1} },
+	{ ControlMask,          XK_Up,     	kscrollup,      {.i = -1} },
+	{ ControlMask,          XK_Down,   	kscrolldown,    {.i = -1} },
 };
 
 /*

@@ -8,11 +8,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "hack nerd font:size=10" };
 static const char dmenufont[]       = { "hack nerd font:size=10" };
-static const char col_gray1[]       = "#1e1e1e";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#FF5733";
-static const char col_gray4[]       = "#000000";
-static const char col_cyan[]        = "#FFC300";
+static const char col_gray1[]       = "#282828";
+static const char col_gray2[]       = "#8ec07c";
+static const char col_gray3[]       = "#8ec07c";
+static const char col_gray4[]       = "#282828";
+static const char col_cyan[]        = "#d79921";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
